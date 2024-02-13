@@ -5,6 +5,7 @@ from .models import MenuModel, BookingModel
 from .serializers import BookingSerializer, MenuSerializers
 from rest_framework import status, generics
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.viewsets import ModelViewSet
 
 
 class MenuItemsView(generics.ListCreateAPIView):
@@ -19,16 +20,25 @@ class SingleMenuItemsView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
     
     
-class BookingsView(generics.ListCreateAPIView):
+class BookingViewSet(ModelViewSet):
     queryset = BookingModel.objects.all()
     serializer_class = BookingSerializer
     permission_classes = [IsAuthenticated]
 
+    
+# class BookingsView(generics.ListCreateAPIView):
+#     queryset = BookingModel.objects.all()
+#     serializer_class = BookingSerializer
+#     permission_classes = [IsAuthenticated]
 
-class SingleBookingsView(generics.RetrieveUpdateDestroyAPIView):
-    queryset =BookingModel.objects.all()
-    serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
+
+# class SingleBookingsView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset =BookingModel.objects.all()
+#     serializer_class = BookingSerializer
+#     permission_classes = [IsAuthenticated]
+    
+
+
 
 
 

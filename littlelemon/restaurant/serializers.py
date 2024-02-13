@@ -3,13 +3,13 @@ from .models import BookingModel, MenuModel
 
 
 class BookingSerializer(serializers.ModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='menu-detail')
+    url = serializers.HyperlinkedIdentityField(view_name='booking-detail')
     class Meta:
         model = BookingModel
         fields = ['id', 'url', 'name', 'number_of_guests', 'booking_date']
         
 class MenuSerializers(serializers.ModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='book-detail')
+    url = serializers.HyperlinkedIdentityField(view_name='menu-detail')
     
     class Meta:
         model = MenuModel
