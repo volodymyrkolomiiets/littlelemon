@@ -7,8 +7,10 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 mysqlclient = "*"
+djoser = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.11"
